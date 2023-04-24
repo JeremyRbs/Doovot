@@ -13,5 +13,9 @@ import './bootstrap';
 
 import { createApp } from 'vue';
 import App from './js/App.vue';
+// import Vue from 'vue';
 
 createApp(App).mount('#vue-app');
+// new Vue({
+//     el: '#app', // where <div id="app"> in your DOM contains the Vue template
+// });

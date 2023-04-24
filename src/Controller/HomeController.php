@@ -9,9 +9,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
-    #[Route('/api/helloword/{name}', name: 'api_helloword')]
-    public function apiHelloword(string $name): Response
+	/**
+	 * @Route("/app/{slug?}", name="app", requirements={"slug"=".+"})")
+	 */
+	public function app(): Response
     {
-      return new JsonResponse('hello ' . $name);
+		return $this->render('base.html.twig');
     }
+
+	#[Route('/api/{name}', name: 'api_')]
+	public function api(string $name): Response
+	{
+	  return new JsonResponse('hello ' . $name);
+	}
 }

@@ -9,7 +9,7 @@
         methods: {
             refreshHello() {
                 if (this.name) {
-                    fetch("/api/helloword/" + this.name, {"method": "GET"})
+                    fetch("/api/" + this.name, {"method": "GET"})
                     .then(response => response.json())
                     .then(result => this.hello = result);
                 }
