@@ -1,25 +1,15 @@
+<template>
+    <h1>Hey</h1>
+    <HelloName />
+</template>
+
 <script>
+    import HelloName from './components/HelloName.vue';
+
     export default {
-        data() {
-            return {
-                name: '',
-                hello: ''
-            }
-        },
-        methods: {
-            refreshHello() {
-                if (this.name) {
-                    fetch("/api/" + this.name, {"method": "GET"})
-                    .then(response => response.json())
-                    .then(result => this.hello = result);
-                }
-            }
+        name: 'App',
+        components: {
+            HelloName
         }
     }
 </script>
-
-<template>
-    <input type="text" v-model="name">
-    <button @click="refreshHello">Demander un bonjour !</button>
-    <h1 v-show="!!hello">{{ hello }}</h1>
-</template>

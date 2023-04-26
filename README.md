@@ -6,3 +6,6 @@ yarn install,
 yarn build,
 
 Pour lancer le projet : symfony server:start
+
+Installation bootstrap : yarn add vue bootstrap bootstrap-vue
+

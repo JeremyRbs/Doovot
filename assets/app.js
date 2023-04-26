@@ -5,17 +5,12 @@
  * (and its CSS file) in your base layout (base.html.twig).
  */
 
-// any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css';
+import { createApp } from 'vue'
+import App from './js/App.vue'
 
-// start the Stimulus application
-import './bootstrap';
+import './styles/app.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js'
 
-import { createApp } from 'vue';
-import App from './js/App.vue';
-// import Vue from 'vue';
+createApp(App).use(bootstrap).mount('#vue-app');
 
-createApp(App).mount('#vue-app');
-// new Vue({
-//     el: '#app', // where <div id="app"> in your DOM contains the Vue template
-// });
