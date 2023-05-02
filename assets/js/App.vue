@@ -1,3 +1,6 @@
+<style>
+@import '../styles/app.css'; 
+</style>
 <script>
     export default {
         data() {
@@ -17,7 +20,6 @@
         }
     }
 </script>
-
 <template>
     <input type="text" v-model="name">
     <button @click="refreshHello">Demander un bonjour !</button>
