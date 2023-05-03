@@ -3,6 +3,9 @@
     <HelloName />
 </template>
 
+<style>
+@import '../styles/app.css'; 
+</style>
 <script>
     import HelloName from './components/HelloName.vue';
 
