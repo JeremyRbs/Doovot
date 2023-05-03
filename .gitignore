@@ -25,3 +25,10 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+#
+### ignore files
+package-lock.json
+package.json
+composer.json
+composer.lock
+yarn.lock
