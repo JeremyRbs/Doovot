@@ -1,5 +1,9 @@
 # Projet vote
 
+Version : 
+  PHP : 8+
+  Symfony : 6+
+
 Pour mettre à jour le projet lancer les commandes : 
   - `composer install`
   - `yarn install`
