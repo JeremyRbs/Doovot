@@ -35,7 +35,4 @@
     .input{
         width: 50%;
     }
-    .alert{
-
-    }
 </style>
