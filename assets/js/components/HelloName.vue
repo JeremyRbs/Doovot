@@ -1,3 +1,4 @@
+<!-- example d'un component -> structure à suivre pour créer un component -->
 <template>
     <div class="input-group mb-3 input">
         <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
