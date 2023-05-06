@@ -9,12 +9,12 @@
 </style>
 
 <script>
-    import HelloName from './components/HelloName.vue';
+    import Connexion from './components/Connexion.vue';
 
     export default {
         name: 'App',
         components: {
-            HelloName
+            Connexion
         }
     }
 </script>
