@@ -11,11 +11,12 @@
 
 <script>
     import HelloName from './components/HelloName.vue';
+    import Headermenu from './components/Headermenu.vue';
 
     export default {
         name: 'App',
         components: {
-            HelloName
+            HelloName, Headermenu
         }
     }
 </script>
