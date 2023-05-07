@@ -9,12 +9,13 @@
 </style>
 
 <script>
-    import Connexion from './components/Connexion.vue';
-
+    import HelloName from './components/HelloName.vue';
+    import Connexion from './views/Connexion.vue';
+    import Inscription from './views/Inscription.vue'
     export default {
         name: 'App',
         components: {
-            Connexion
+            HelloName, Connexion, Inscription
         }
     }
 </script>
