@@ -10,11 +10,12 @@
 
 <script>
     import HelloName from './components/HelloName.vue';
-
+    import Connexion from './views/Connexion.vue';
+    import Inscription from './views/Inscription.vue'
     export default {
         name: 'App',
         components: {
-            HelloName
+            HelloName, Connexion, Inscription
         }
     }
 </script>
