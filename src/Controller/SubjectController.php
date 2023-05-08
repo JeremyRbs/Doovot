@@ -23,7 +23,7 @@ class SubjectController extends AbstractController
         $categ = $categRepo->findOneBy(['id' => 1]);
 
         $subject = new Subject();
-        $subject->setName("Cours");
+        $subject->setName("Crous");
         $subject->setCategory($categ);
         $subject->setUser($user);
 
@@ -31,5 +31,23 @@ class SubjectController extends AbstractController
         $entityManager->flush();
 
         return new JsonResponse('Saved new subject with id '.$subject->getId());
+    }
+
+    #[Route('/all-subjects', name: 'all_subjects')]
+    public function getAllSubjects(EntityManagerInterface $entityManager): JsonResponse
+    {
+        $subjectRepo = $entityManager->getRepository(Subject::class);
+
+        $allSubjects = $subjectRepo->findAll();
+
+        $subjects = [];
+        foreach ($allSubjects as $subject) {
+            $subjects[] = [
+                'id' => $subject->getId(),
+                'name' => $subject->getName(),
+            ];
+        }
+
+        return new JsonResponse($subjects);
     }
 }

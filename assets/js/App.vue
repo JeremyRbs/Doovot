@@ -1,7 +1,6 @@
 <template>
     <h1>Hey</h1>
     <HelloName />
-    <h1>Bastien je veux me marier avec toi (c'est pas louis qui a ecrit)(je test git branch)</h1>
     <HelloName />
 </template>
 
@@ -11,12 +10,14 @@
 
 <script>
     import HelloName from './components/HelloName.vue';
-    import Headermenu from './components/Headermenu.vue';
+    import Connexion from './views/Connexion.vue';
+    import Inscription from './views/Inscription.vue';
+    import Subject from './views/Subject.vue';
 
     export default {
         name: 'App',
         components: {
-            HelloName, Headermenu
+            HelloName, Connexion, Inscription, Subject
         }
     }
 </script>
