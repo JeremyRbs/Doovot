@@ -13,11 +13,12 @@
     import Connexion from './views/Connexion.vue';
     import Inscription from './views/Inscription.vue';
     import Subject from './views/Subject.vue';
+    import Dashboard from './views/Dashboard.vue';
 
     export default {
         name: 'App',
         components: {
-            HelloName, Connexion, Inscription, Subject
+            HelloName, Connexion, Inscription, Subject, Dashboard
         }
     }
 </script>

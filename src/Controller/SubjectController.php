@@ -50,4 +50,31 @@ class SubjectController extends AbstractController
 
         return new JsonResponse($subjects);
     }
+
+    #[Route('/history/{userId}', name: 'history')]
+    public function getHistory(EntityManagerInterface $entityManager, int $userId): JsonResponse
+    {
+        $subjectRepo = $entityManager->getRepository(Subject::class);
+        $uRepo = $entityManager->getRepository(User::class);
+        $userId = 1;
+        $user = $uRepo->findOneBy(['id' => $userId]);
+
+        $subjects = [];
+        foreach ($subjectRepo->findBy(['user' => $user]) as $subject) {
+            $subjects[] = [
+                'id' => $subject->getId(),
+                'name' => $subject->getName(),
+            ];
+        }
+
+        $votes = [];
+        foreach ($user->getProjectVotes() as $vote) {
+            $votes[] = [
+                'id' => $vote->getId(),
+                'name' => $vote->getName(),
+            ];
+        };
+
+        return new JsonResponse([...["subjects" => $subjects], ...["votes" => $votes]]);
+    }
 }
