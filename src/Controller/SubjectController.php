@@ -56,7 +56,6 @@ class SubjectController extends AbstractController
     {
         $subjectRepo = $entityManager->getRepository(Subject::class);
         $uRepo = $entityManager->getRepository(User::class);
-        $userId = 1;
         $user = $uRepo->findOneBy(['id' => $userId]);
 
         $subjects = [];

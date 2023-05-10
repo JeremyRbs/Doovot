@@ -1,7 +1,6 @@
 <template>
     <h1>Hey</h1>
     <HelloName />
-    <HelloName />
 </template>
 
 <style>
