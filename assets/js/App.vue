@@ -1,6 +1,7 @@
 <template>
-    <h1>Hey</h1>
-    <HelloName />
+    <!-- <h1>Hey</h1>
+    <HelloName /> -->
+    <Vote/>
 </template>
 
 <style>
@@ -13,11 +14,12 @@
     import Inscription from './views/Inscription.vue';
     import Subject from './views/Subject.vue';
     import Dashboard from './views/Dashboard.vue';
+    import Vote from './views/Vote.vue';
 
     export default {
         name: 'App',
         components: {
-            HelloName, Connexion, Inscription, Subject, Dashboard
+            HelloName, Connexion, Inscription, Subject, Dashboard, Vote
         }
     }
 </script>

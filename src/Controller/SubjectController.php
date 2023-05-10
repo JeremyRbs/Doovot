@@ -76,4 +76,20 @@ class SubjectController extends AbstractController
 
         return new JsonResponse([...["subjects" => $subjects], ...["votes" => $votes]]);
     }
+
+    #[Route('/graph/{subjectId}', name: 'graph')]
+    public function getGraph(EntityManagerInterface $entityManager, int $subjectId): JsonResponse
+    {
+        $subjectRepo = $entityManager->getRepository(Subject::class);
+        $subject = $subjectRepo->findOneBy(['id' => $subjectId]);
+
+        $projects = [];
+        $votes = [];
+        foreach ($subject->getProjects() as $project) {
+            $projects[] = $project->getName();
+            $votes[] = count($project->getUserVotes());
+        }
+
+        return new JsonResponse([...["labels" => $projects], ...["data" => $votes]]);
+    }
 }
