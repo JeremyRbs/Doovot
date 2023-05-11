@@ -6,123 +6,101 @@
 <script>
     import { Pie } from 'vue-chartjs';
     import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
-    ChartJS.register(ArcElement, Tooltip, Legend)
-    import { defineComponent, onMounted, ref } from "vue";
+    ChartJS.register(ArcElement, Tooltip, Legend);
 
     export default{
         name: 'Vote',
         components: { Pie },
-        setup () {
-            const doughnutRef = ref([]);
-            let testData = ref(null);
-
-            onMounted(() => {
-                doughnutRef.value = [1, 2, 2]
-
-                testData.value = {
-                    labels: ["Distanciel", "Présentiel", "Hybride"],
-                    datasets: [
-                        {
-                            data: doughnutRef.value,
-                            backgroundColor: [
-                                'rgb(255, 99, 132)',
-                                'rgb(54, 162, 235)',
-                                'rgb(255, 205, 86)'
-                            ],
-                        },
-                    ],
-                };
-            });
-
-            return { testData, doughnutRef };
+        data () {
+            return {
+                loaded: false,
+                chartData: null,
+                graphData: null,
+                chartOptions: {
+                    responsive: true
+                },
+                subject: '',
+                showVote: false,
+                showResult: false,
+            }
         },
-        
-        // created() {
-        //     this.getGraph();
-        // },
-        // data: () => ({
-        //     chartData: {
-        //         labels: [],
-        //         datasets: [{
-        //             label: 'My First Dataset',
-        //             data: [],
-        //             backgroundColor: [
-        //                 'rgb(255, 99, 132)',
-        //                 'rgb(54, 162, 235)',
-        //                 'rgb(255, 205, 86)'
-        //             ],
-        //             hoverOffset: 4
-        //         }]
-        //     },
-        //     chartOptions: {
-        //         responsive: true
-        //     },
-        //     projectName: 'Cours',
-        //     loaded: false,
-        //     chartData: null,
-        // }),
-        // async mounted () {
-        //     this.loaded = false
+        async mounted () {
+            this.loaded = false;
 
-        //     try {
-        //         console.log("async");
-        //         await fetch("/graph/" + 1, {"method": "GET"})
-        //             .then(response => response.json())
-        //             .then(result => {
-        //                 console.log(result);
-        //                 this.graphData = result;
-        //             });
-                
-        //         this.chartdata = {
-        //             labels: this.graphData.labels,
-        //             datasets: [{
-        //                 label: 'Résultat des votes',
-        //                 data: this.graphData.data,
-        //                 backgroundColor: [
-        //                     'rgb(255, 99, 132)',
-        //                     'rgb(54, 162, 235)',
-        //                     'rgb(255, 205, 86)'
-        //                 ],
-        //                 hoverOffset: 4
-        //             }]
-        //         };
-        //         console.log(this.chartdata);
+            try {
+                await fetch("/graph/" + 1, {"method": "GET"})
+                    .then(response => response.json())
+                    .then(result => {
+                        this.graphData = result;
+                        this.subject = result.subject;
+                    });
 
-        //         this.loaded = true
-        //     } catch (e) {
-        //         console.error(e)
-        //     }
-        // },
-        // methods: {
-        //     getGraph() {
-        //         fetch("/graph/" + 1, {"method": "GET"})
-        //             .then(response => response.json())
-        //             .then(result => {
-        //                 console.log(result);
-        //                 console.log(this.chartData);
-        //                 // this.graphData = result;
-        //                 // this.chartData.labels = result.labels;
-        //                 // this.chartData.datasets[0].data = result.data;
-        //                 // console.log(this.chartData);
-        //             });
-        //         this.loaded = true;
-        //     },
-        // }
+                this.chartData = {
+                    labels: this.graphData.labels,
+                    datasets: [{
+                        label: 'Résultat des votes',
+                        data: this.graphData.data,
+                        backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 205, 86)'
+                        ],
+                        hoverOffset: 4
+                    }]
+                };
+
+                this.loaded = true;
+            } catch (e) {
+                console.error(e)
+            }
+        },
+        methods: {
+            getImgPath(numberImg) {
+                return require(`../../../public/images/subject-${numberImg}.svg`);
+            },
+            vote() {
+                this.showVote = !this.showVote;
+            },
+            result() {
+                this.showResult = !this.showResult;
+            }
+        }
     }
 </script>
 
 <template>
-    <div class="flex-column">
-        <span>Projet : Cours</span>
-        <!-- <span>Projet : {{ this.projectName }}</span> -->
-    </div>
-    <div class="graph">
-        <!-- <Pie 
-            v-if="chartData != undefined || chartData != null"
-            id="chart-votes"
-            :options="chartOptions"
-            :data="chartData"
-        /> -->
-        <Pie v-if="testData != undefined" :data="testData" ref="doughnutRef" />
+    <div class="flex-column content">
+        <div class="d-flex flex-row">
+            <span class="title">Projet : {{ this.subject.name }}</span>
+        </div>
+        <div class="d-flex flex-row" v-if="loaded === true && chartData != null">
+            <div v-if="showResult" class="box flex-column">
+                <Pie id="chart-votes" :data="chartData" :options="chartOptions" />
+            </div>
+            <div v-if="!showResult" class="box flex-column">
+                <img class="img" :src="getImgPath(this.subject.id % 3)">
+                <span class="subject-title">{{ this.subject.name }}</span>
+            </div>
+            <div class="rigth-side d-flex flex-column">
+                <div class="description d-flex flex-row">
+                    <div class="w-100 d-flex flex-column">
+                        <span class="subject-title d-flex flex-row">{{ this.subject.name }}</span>
+                        <span class="subject-description d-flex flex-row">{{ this.subject.name }}</span>
+                    </div>
+                </div>
+                <div class="graph d-flex flex-row">
+                    <div v-if="!showResult && !showVote" class="d-flex flex-column">
+                        <Pie class="chart-votes" :data="chartData" :options="chartOptions" />
+                    </div>
+                    <div v-if="showResult || showVote" class="d-flex flex-column">
+                        <img class="chart-votes" src="../../../public/images/show-vote.svg">
+                    </div>
+                    <div class="d-flex flex-column all-btn">
+                        <button class="btn align-self-center" v-on:click="this.vote()">Voter</button>
+                        <button class="btn align-self-center" v-on:click="this.result()">Résultats</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>

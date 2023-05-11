@@ -1,4 +1,114 @@
+.content {
+    margin: 32px;
+}
+
+.title {
+    margin-left: 24px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 59px;
+
+    color: #498CB3;
+}
+
+.box {
+    margin-right: 32px;
+    box-sizing: border-box;
+
+    width: 40%;
+    height: 400px;
+
+    background: #FFFFFF;
+    border: 1px solid #498CB3;
+    border-radius: 30px;
+}
+
+.img {
+    margin-left: 50px;
+    width: 80%;
+    height: 80%;
+}
+
+.subject-title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    justify-content: center;
+
+    width: 100%;
+
+    color: #498CB3;
+}
+
+.rigth-side {
+    width: 50%;
+    height: 400px;
+}
+
+.description {
+    box-sizing: border-box;
+
+    height: 25%;
+    width: 100%;
+
+    background: #FFFFFF;
+    border: 1px solid #498CB3;
+    border-radius: 30px;
+}
+
+.subject-description {
+    margin: 24px;
+    display: block;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 29px;
+    text-align: center;
+
+    color: #498CB3;
+}
+
 .graph {
-    width: 500px;
-    height: 500px;
+    height: 100%;
+    width: 100%;
+}
+
+.chart-votes {
+    height: 300px;
+    width: 300px;
+}
+
+.all-btn {
+    margin-top: 32px;
+    height: 100%;
+    width: 100%;
+}
+
+.btn {
+    margin: 8px;
+    box-sizing: border-box;
+
+    width: 200px;
+    height: 60px;
+
+    background: #498CB3;
+    border: 1px solid #498CB3;
+    border-radius: 30px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+
+    color: #FFFFFF;
 }

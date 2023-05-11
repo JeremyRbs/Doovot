@@ -90,6 +90,13 @@ class SubjectController extends AbstractController
             $votes[] = count($project->getUserVotes());
         }
 
-        return new JsonResponse([...["labels" => $projects], ...["data" => $votes]]);
+        return new JsonResponse([
+            ...["labels" => $projects], 
+            ...["data" => $votes], 
+            ...["subject" => [
+                "id" => $subject->getId(),
+                "name" => $subject->getName()
+            ]]
+        ]);
     }
 }
