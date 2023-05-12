@@ -1,26 +1,37 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid align-items-center nav">
-                <a class="navbar-brand logoimg" href="#">
+        <nav class="navbar navbar-expand-xl">
+            <div class="container-fluid mt-2 ms-4">
+                <router-link class="navbar-brand" to="./home">
                     <img src="../../images/doovot.png" alt="Logo" width="353" height="81">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                </router-link>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav align-items-center">
-                        <a class="nav-link text" aria-current="page" href="#">Accueil</a>
-                        <a class="nav-link text" href="#">Services</a>
-                        <a class="nav-link text" href="#">propos</a>
-                        <a class="nav-link text">Contact</a>
-                        <a class="nav-link me-5" href="#">
-                            <img src="../../images/logopersonneblanc.png" alt="Logoperson" height="80" width="80">
-                        </a>                       
-                    </div>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link text-nowrap fs-3 me-5 fw-bolder" aria-current="page" href="#">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-nowrap fs-4 me-5 fw-bolder" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-nowrap fs-4 me-5 fw-bolder" href="#">A propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-nowrap fs-4 me-5 fw-bolder" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-nowrap mb-4 me-4" href="#">
+                                <img src="../../images/logopersonneblanc.png" alt="Logoperson" height="80" width="80">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </nav>        
+        </nav>
     </div>
 </template>
 
@@ -41,20 +52,14 @@
 </script>
 
 <style scoped>
-    .logoimg{
-        padding-top: 20px;
-        padding-left: 30px;
+    li a{
+        color:white;
+        font-family: 'Montserrat';
     }
-    .text{
-        font-family: 'Lucida Sans';
-        font-style: normal;
-        font-weight: bolder;
-        font-size: 21px;
-        line-height: 44px;
-        text-align: center;
-        color: #FFFFFF;
-        margin-top: 20px;
-        margin-right: 1.5em;
+    li a:hover{
+        color:#3c7ba0;
+    }
+    li a:active{
     }
 
 </style>
