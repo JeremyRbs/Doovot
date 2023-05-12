@@ -1,6 +1,5 @@
 <template>
-    <h1>Hey</h1>
-    <HelloName />
+    <Headermenu />
 </template>
 
 <style>
