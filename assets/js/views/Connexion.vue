@@ -41,7 +41,7 @@
 
 <template>
     <div style="flex">
-      <img id="imageConnexion" src="../../images/bonhommeConnexion.png"/>  
+      <img id="imageConnexion" src="../../images/bonhommeConnexion.svg"/>  
     </div>
     <div>
         <div class="boxConnexion" style="position: absolute; width: 20%; height: 10%; margin-top: 16%;  margin-left: 60%;">
