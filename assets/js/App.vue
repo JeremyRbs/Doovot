@@ -1,5 +1,6 @@
 <template>
-    <Services> </Services>
+    <h1>Hey</h1>
+    <HelloName />
 </template>
 
 <style>
