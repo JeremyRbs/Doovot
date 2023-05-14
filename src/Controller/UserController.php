@@ -10,20 +10,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class UserController extends AbstractController
 {
-    #[Route('/user', name: 'create_user')]
-    public function createUser(EntityManagerInterface $entityManager): JsonResponse
-    {
-        $user = new User();
-        $user->setUserName("tata");
-        $user->setPassword("tata");
-        $user->setIsAdmin(true);
-
-        $entityManager->persist($user);
-        $entityManager->flush();
-
-        return new JsonResponse('Saved new user with id '.$user->getId());
-    }
-
     #[Route('/inscriptionUser/{username}&{password}', name: 'inscription_user')]
     public function inscriptionUser(EntityManagerInterface $entityManager, string $username, string $password): JsonResponse
     {

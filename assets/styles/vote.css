@@ -26,6 +26,35 @@
     border-radius: 30px;
 }
 
+.circle {
+    margin: 16px;
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 40px;
+    height: 40px;
+
+    background: #FFFFFF;
+    border: 1px solid #498CB3;
+    border-radius: 100px;
+}
+
+.option {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: 75px;
+    display: block;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 29px;
+    text-align: start;
+
+    color: #498CB3;
+}
+
 .img {
     margin-left: 50px;
     width: 80%;
@@ -69,7 +98,7 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 18px;
     line-height: 29px;
     text-align: center;
 
@@ -81,9 +110,9 @@
     width: 100%;
 }
 
-.chart-votes {
-    height: 300px;
-    width: 300px;
+#chart-votes {
+    height: 300px !important;
+    width: 300px !important;
 }
 
 .all-btn {

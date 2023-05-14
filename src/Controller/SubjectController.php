@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Project;
 use App\Entity\Subject;
 use App\Entity\Category;
 use Doctrine\ORM\EntityManagerInterface;
@@ -85,9 +86,15 @@ class SubjectController extends AbstractController
 
         $projects = [];
         $votes = [];
+        $allProjects = [];
         foreach ($subject->getProjects() as $project) {
             $projects[] = $project->getName();
             $votes[] = count($project->getUserVotes());
+            $allProjects[] = [
+                "id" => $project->getId(),
+                "name" => $project->getName(),
+                "description" => $project->getDescription(),
+            ];
         }
 
         return new JsonResponse([
@@ -96,7 +103,8 @@ class SubjectController extends AbstractController
             ...["subject" => [
                 "id" => $subject->getId(),
                 "name" => $subject->getName()
-            ]]
+            ]],
+            ...["projects" =>  $allProjects],
         ]);
     }
 }
