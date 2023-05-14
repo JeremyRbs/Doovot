@@ -1,6 +1,5 @@
 <template>
-    <h1>Hey</h1>
-    <HelloName />
+    <Services> </Services>
 </template>
 
 <style>
@@ -14,11 +13,12 @@
     import Subject from './views/Subject.vue';
     import Dashboard from './views/Dashboard.vue';
     import Vote from './views/Vote.vue';
+    import Services from './views/Services.vue';
 
     export default {
         name: 'App',
         components: {
-            HelloName, Connexion, Inscription, Subject, Dashboard, Vote
+            HelloName, Connexion, Inscription, Subject, Dashboard, Vote, Services
         }
     }
 </script>
