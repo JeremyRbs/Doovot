@@ -54,12 +54,8 @@
 <style scoped>
     li a{
         color:white;
-        font-family: 'Montserrat';
     }
     li a:hover{
         color:#3c7ba0;
     }
-    li a:active{
-    }
-
 </style>
