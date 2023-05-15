@@ -14,7 +14,7 @@
     color: #498CB3;
 }
 
-.box {
+.box-vote {
     margin-right: 32px;
     box-sizing: border-box;
 
@@ -55,7 +55,7 @@
     color: #498CB3;
 }
 
-.img {
+.img-vote {
     margin-left: 50px;
     width: 80%;
     height: 80%;
