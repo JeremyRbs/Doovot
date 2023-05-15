@@ -23,4 +23,11 @@ class UserController extends AbstractController
 
         return new JsonResponse('Saved new user with id '.$user->getId());
     }
+
+    // #[Route('/connexion', name: 'connexion')]
+    // public function connexion(EntityManagerInterface $entityManager): JsonResponse
+    // {
+
+    //     return new JsonResponse('connexion');
+    // }
 }

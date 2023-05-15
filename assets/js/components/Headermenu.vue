@@ -12,16 +12,16 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul class="navbar-nav ms-auto align-items-center">
                         <li class="nav-item">
-                            <a class="nav-link text-nowrap fs-3 me-5 fw-bolder" aria-current="page" href="#">Accueil</a>
+                            <router-link class="nav-link text-nowrap fs-3 me-5 fw-bolder" to="/">Accueil</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-nowrap fs-4 me-5 fw-bolder" href="#">Services</a>
+                            <router-link class="nav-link text-nowrap fs-3 me-5 fw-bolder" to="/services">Services</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-nowrap fs-4 me-5 fw-bolder" href="#">A propos</a>
+                            <router-link class="nav-link text-nowrap fs-3 me-5 fw-bolder" to="/a-propos">A propos</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-nowrap fs-4 me-5 fw-bolder" href="#">Contact</a>
+                            <router-link class="nav-link text-nowrap fs-3 me-5 fw-bolder" to="/contact">Contact</router-link>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-nowrap mb-4 me-4" href="#">
