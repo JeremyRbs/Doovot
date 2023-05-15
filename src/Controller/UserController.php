@@ -10,18 +10,28 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class UserController extends AbstractController
 {
-    #[Route('/user', name: 'create_user')]
-    public function createUser(EntityManagerInterface $entityManager): JsonResponse
+    #[Route('/inscriptionUser/{username}&{password}', name: 'inscription_user')]
+    public function inscriptionUser(EntityManagerInterface $entityManager, string $username, string $password): JsonResponse
     {
+
         $user = new User();
-        $user->setUserName("tata");
-        $user->setPassword("tata");
-        $user->setIsAdmin(true);
+        $user->setUserName($username);
+        $user->setPassword($password);
+        $user->setIsAdmin(false);
 
         $entityManager->persist($user);
         $entityManager->flush();
 
-        return new JsonResponse('Saved new user with id '.$user->getId());
+        return new JsonResponse('Votre inscription a bien été prise en compte');
+    }
+
+    #[Route('/connexionUser/{username}&{password}', name: 'connexion_user')]
+    public function connexionUser(EntityManagerInterface $entityManager, string $username, string $password): JsonResponse
+    {
+        $uRepo = $entityManager->getRepository(User::class);
+        $user = $uRepo->findOneBy(['userName' => $username, 'password' => $password]);
+        $response = $user == null ? "Identifiants incorrects" : ['id' => $user->getId(), 'name' => $user->getUserName(), 'isAdmin' => $user->isIsAdmin()];
+        return new JsonResponse($response);
     }
 
     // #[Route('/connexion', name: 'connexion')]

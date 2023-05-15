@@ -11,7 +11,7 @@
     // import Connexion from './views/Connexion.vue';
     // import Inscription from './views/Inscription.vue';
     // import Subject from './views/Subject.vue';
-    import Headermenu from '../js/components/Headermenu.vue';
+    import Headermenu from './components/Headermenu.vue';
 
     export default {
         name: 'App',

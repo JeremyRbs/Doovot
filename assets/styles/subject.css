@@ -3,7 +3,6 @@
     width: 563px;
     height: 63px;
 
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 48px;
@@ -41,8 +40,6 @@
     background: #FFFFFF;
     border: 1px solid #498CB3;
     border-radius: 30px;
-
-    /* flex: 33.333333%; */
 }
 
 .img {

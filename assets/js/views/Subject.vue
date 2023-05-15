@@ -20,7 +20,6 @@
                     .then(response => response.json())
                     .then(result => {
                         this.subjects = result;
-                        console.log(this.subjects);
                     });
             },
             getImgPath(numberImg) {

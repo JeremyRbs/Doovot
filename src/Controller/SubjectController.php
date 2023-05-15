@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Project;
 use App\Entity\Subject;
 use App\Entity\Category;
 use Doctrine\ORM\EntityManagerInterface;
@@ -49,5 +50,61 @@ class SubjectController extends AbstractController
         }
 
         return new JsonResponse($subjects);
+    }
+
+    #[Route('/history/{userId}', name: 'history')]
+    public function getHistory(EntityManagerInterface $entityManager, int $userId): JsonResponse
+    {
+        $subjectRepo = $entityManager->getRepository(Subject::class);
+        $uRepo = $entityManager->getRepository(User::class);
+        $user = $uRepo->findOneBy(['id' => $userId]);
+
+        $subjects = [];
+        foreach ($subjectRepo->findBy(['user' => $user]) as $subject) {
+            $subjects[] = [
+                'id' => $subject->getId(),
+                'name' => $subject->getName(),
+            ];
+        }
+
+        $votes = [];
+        foreach ($user->getProjectVotes() as $vote) {
+            $votes[] = [
+                'id' => $vote->getId(),
+                'name' => $vote->getName(),
+            ];
+        };
+
+        return new JsonResponse([...["subjects" => $subjects], ...["votes" => $votes]]);
+    }
+
+    #[Route('/graph/{subjectId}', name: 'graph')]
+    public function getGraph(EntityManagerInterface $entityManager, int $subjectId): JsonResponse
+    {
+        $subjectRepo = $entityManager->getRepository(Subject::class);
+        $subject = $subjectRepo->findOneBy(['id' => $subjectId]);
+
+        $projects = [];
+        $votes = [];
+        $allProjects = [];
+        foreach ($subject->getProjects() as $project) {
+            $projects[] = $project->getName();
+            $votes[] = count($project->getUserVotes());
+            $allProjects[] = [
+                "id" => $project->getId(),
+                "name" => $project->getName(),
+                "description" => $project->getDescription(),
+            ];
+        }
+
+        return new JsonResponse([
+            ...["labels" => $projects], 
+            ...["data" => $votes], 
+            ...["subject" => [
+                "id" => $subject->getId(),
+                "name" => $subject->getName()
+            ]],
+            ...["projects" =>  $allProjects],
+        ]);
     }
 }

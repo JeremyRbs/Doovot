@@ -5,7 +5,7 @@
  * (and its CSS file) in your base layout (base.html.twig).
  */
 
-import { createApp } from 'vue'
+import { VueElement, createApp } from 'vue'
 import App from './js/App.vue'
 
 import './styles/app.css'
@@ -58,3 +58,7 @@ const app = createApp(App);
 app.use(router);
 app.use(bootstrap);
 app.mount('#vue-app');
+
+VueElement.prototype.$userId = ''
+VueElement.prototype.$userName = ''
+VueElement.prototype.$userIsAdmin = ''

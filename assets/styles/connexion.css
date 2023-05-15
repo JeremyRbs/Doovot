@@ -24,6 +24,7 @@
     border-radius: 47px;
     box-sizing: border-box;
 
+    box-shadow:  10px 5px 5px #498CB2;    ;
 }
 .btnConnexion{
     box-sizing: border-box;
@@ -32,4 +33,5 @@
     border-radius: 30px;
 
     color: #FFFFFF;
+    box-shadow: 5px 5px 5px #FFFFFF;
 }
