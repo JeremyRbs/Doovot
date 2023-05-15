@@ -1,6 +1,5 @@
 <template>
-    <h1>Hey</h1>
-    <HelloName />
+    <Headermenu />
 </template>
 
 <style>
@@ -15,11 +14,12 @@
     import Dashboard from './views/Dashboard.vue';
     import Vote from './views/Vote.vue';
     import Services from './views/Services.vue';
+    import Headermenu from './components/Headermenu.vue';
 
     export default {
         name: 'App',
         components: {
-            HelloName, Connexion, Inscription, Subject, Dashboard, Vote, Services
+            HelloName, Connexion, Inscription, Subject, Dashboard, Vote, Services, Headermenu
         }
     }
 </script>
