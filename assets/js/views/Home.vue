@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    import Headermenu from './components/Headermenu.vue';
+    import Headermenu from '../components/Headermenu.vue';
 
     export default {
         name: 'Home',
