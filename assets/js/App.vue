@@ -1,5 +1,5 @@
 <template>
-    <Headermenu />
+    <HeadermenuConnect />
 </template>
 
 <style>
@@ -15,11 +15,12 @@
     import Vote from './views/Vote.vue';
     import Services from './views/Services.vue';
     import Headermenu from './components/Headermenu.vue';
+    import HeadermenuConnect from './components/HeadermenuConnect.vue';
 
     export default {
         name: 'App',
         components: {
-            HelloName, Connexion, Inscription, Subject, Dashboard, Vote, Services, Headermenu
+            HelloName, Connexion, Inscription, Subject, Dashboard, Vote, Services, Headermenu, HeadermenuConnect
         }
     }
 </script>
