@@ -8,6 +8,7 @@
 
 <script>
     import Headermenu from './components/Headermenu.vue';
+    import HeadermenuConnect from './components/HeadermenuConnect.vue';
 
     export default {
         name: 'App',

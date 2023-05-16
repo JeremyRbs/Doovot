@@ -111,7 +111,7 @@
         </div>
         <div class="d-flex flex-row" v-if="loaded === true && chartData != null">
             <!-- show vote -->
-            <div v-if="showVote && !showResult" class="box flex-column">
+            <div v-if="showVote && !showResult" class="box-vote flex-column">
                 <div v-for="project in this.projects" class="d-flex flex-row">
                     <input class="circle" type="radio" v-model="voteForm" :id="project.id" :value="project.id" @change="this.changeSelectedProject($event.target.value)">
                     <span class="option">{{ project.description }} </span>
@@ -120,12 +120,12 @@
                 <button class="btn align-self-center" v-on:click="this.goBack()">RETOUR</button>
             </div>
             <!-- show result -->
-            <div v-if="showResult && !showVote" class="box flex-column">
+            <div v-if="showResult && !showVote" class="box-vote flex-column">
                 <Pie id="chart-votes" :data="chartData" :options="chartOptions" />
                 <button class="btn align-self-center" v-on:click="this.goBack()">RETOUR</button>
             </div>
-            <div v-if="(!showResult && !showVote) || (showResult && showVote)" class="box flex-column">
-                <img class="img" :src="getImgPath(this.subject.id % 3)">
+            <div v-if="(!showResult && !showVote) || (showResult && showVote)" class="box-vote flex-column">
+                <img class="img-vote" :src="getImgPath(this.subject.id % 3)">
                 <span class="subject-title">{{ this.subject.name }}</span>
             </div>
             <div class="rigth-side d-flex flex-column">

@@ -23,7 +23,7 @@
     color: #498CB3;
 }
 
-.box {
+.box-dashboard {
     margin: 8px;
     box-sizing: border-box;
 
@@ -35,7 +35,7 @@
     border-radius: 30px;
 }
 
-.img {
+.img-dashboard {
     width: 30%;
     height: 30%;
 }

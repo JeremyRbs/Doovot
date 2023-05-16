@@ -4,6 +4,8 @@
 </style>
 
 <script>
+    import { VueElement } from 'vue';
+
     export default{
         name: 'Dashboard',
         data() {
@@ -39,7 +41,7 @@
                     <span class="box-title">Historique de mes projets</span>
                     <div class="d-flex flex-row flex-wrap justify-content-center">
                         <div v-for="subject in this.subjects">
-                            <div class="box">{{ subject.name }}</div>
+                            <div class="box-dashboard flex-column">{{ subject.name }}</div>
                         </div>
                     </div>
                 </div>
@@ -49,14 +51,14 @@
                     <span class="box-title">Historique de mes votes</span>
                     <div class="d-flex flex-row flex-wrap justify-content-center">
                         <div v-for="vote in this.votes">
-                            <div class="box">{{ vote.name }}</div>
+                            <div class="box-dashboard">{{ vote.name }}</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="flex-row d-flex justify-content-center">
-            <img class="img" src="../../../public/images/dashboard.svg">
+            <img class="img-dashboard" src="../../../public/images/dashboard.svg">
         </div>
     </div>
 </template>
