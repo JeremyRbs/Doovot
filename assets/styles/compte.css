@@ -1,0 +1,35 @@
+.boxCompte{
+    background: #FFFFFF;
+    border: 1px solid #498CB3;
+    border-radius: 30px;
+    box-sizing: border-box;
+    width: 25%;
+    height: 19%;
+    position: absolute;
+    
+    text-align: center;
+    box-shadow:  10px 5px 5px #498CB3;
+}
+.textCompte{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 200%;
+    text-align: center;
+
+    color: #498CB3;
+}
+.buttonCompte{
+    box-sizing: border-box;
+    background-color: #498CB3;
+    border: 1px solid #498CB3;
+    border-radius: 30px;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+    width: 55%;
+    height: 40%;
+    margin-top: 5%;
+    color: #FFFFFF;
+   
+}
