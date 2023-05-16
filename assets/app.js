@@ -12,7 +12,57 @@ import './styles/app.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js'
 
-createApp(App).use(bootstrap).mount('#vue-app');
+import { createRouter, createWebHistory } from 'vue-router';
+import Home from '../assets/js/views/Home';
+import Connexion from '../assets/js/views/Connexion.vue';
+import Inscription from '../assets/js/views/Inscription.vue';
+import Services from '../assets/js/views/Services.vue';
+import Contact from '../assets/js/views/Contact.vue';
+import Vote from '../assets/js/views/Vote.vue';
+import Dashboard from '../assets/js/views/Dashboard.vue';
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes: [
+        {
+            path: '/app',
+            component: Home
+        },
+        {
+            path: '/connexion',
+            name: 'Connexion',
+            component: Connexion
+        },
+        {
+            path: '/inscription',
+            name: 'Inscription',
+            component: Inscription
+        },
+        {
+            path: '/services',
+            name: 'Services',
+            component: Services
+        },
+        {
+            path: '/a-propos',
+            name: 'APropos',
+            component: Home
+        },
+        {
+            path: '/contact',
+            name: 'Contact',
+            component: Contact
+        },
+        {
+            path: '/home',
+            name: 'Home',
+            component: Home
+        }
+    ]
+});
+
+createApp(App).use(router).use(bootstrap).mount('#vue-app');
+
 VueElement.prototype.$userId = ''
 VueElement.prototype.$userName = ''
 VueElement.prototype.$userIsAdmin = ''

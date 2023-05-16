@@ -2,7 +2,7 @@
     <div>
         <nav class="navbar navbar-expand-xl">
             <div class="container-fluid mt-2 ms-4">
-                <router-link class="navbar-brand" to="./home">
+                <router-link class="navbar-brand" to="/home">
                     <img src="../../images/doovot.png" alt="Logo" width="353" height="81">
                 </router-link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -12,16 +12,16 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul class="navbar-nav ms-auto align-items-center">
                         <li class="nav-item">
-                            <a class="nav-link text-nowrap fs-3 me-5 fw-bolder" aria-current="page" href="#">Accueil</a>
+                            <router-link class="nav-link text-nowrap fs-3 me-5 fw-bolder" to="/app">Accueil</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-nowrap fs-4 me-5 fw-bolder" href="#">Services</a>
+                            <router-link class="nav-link text-nowrap fs-3 me-5 fw-bolder" to="/services">Services</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-nowrap fs-4 me-5 fw-bolder" href="#">A propos</a>
+                            <router-link class="nav-link text-nowrap fs-3 me-5 fw-bolder" to="/a-propos">A propos</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-nowrap fs-4 me-5 fw-bolder" href="#">Contact</a>
+                            <router-link class="nav-link text-nowrap fs-3 me-5 fw-bolder" to="/contact">Contact</router-link>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-nowrap mb-4 me-4" href="#">
@@ -33,6 +33,7 @@
             </div>
         </nav>
     </div>
+    <router-view />
 </template>
 
 <script>
@@ -54,6 +55,7 @@
 <style scoped>
     li a{
         color:white;
+        font-family: 'Montserrat';
     }
     li a:hover{
         color:#3c7ba0;
