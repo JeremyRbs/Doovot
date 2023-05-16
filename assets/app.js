@@ -18,14 +18,12 @@ import Connexion from '../assets/js/views/Connexion.vue';
 import Inscription from '../assets/js/views/Inscription.vue';
 import Services from '../assets/js/views/Services.vue';
 import Contact from '../assets/js/views/Contact.vue';
+import Vote from '../assets/js/views/Vote.vue';
+import Dashboard from '../assets/js/views/Dashboard.vue';
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        {
-            path: '/',
-            component: Home
-        },
         {
             path: '/app',
             component: Home

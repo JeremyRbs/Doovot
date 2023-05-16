@@ -12,7 +12,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul class="navbar-nav ms-auto align-items-center">
                         <li class="nav-item">
-                            <router-link class="nav-link text-nowrap fs-3 me-5 fw-bolder" to="/">Accueil</router-link>
+                            <router-link class="nav-link text-nowrap fs-3 me-5 fw-bolder" to="/app">Accueil</router-link>
                         </li>
                         <li class="nav-item">
                             <router-link class="nav-link text-nowrap fs-3 me-5 fw-bolder" to="/services">Services</router-link>
