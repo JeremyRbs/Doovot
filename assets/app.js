@@ -68,6 +68,11 @@ const router = createRouter({
             path: '/subject',
             name: 'Subject',
             component: Subject
+        },
+        {
+            path: '/vote/:id',
+            name: 'Vote',
+            component: Vote
         }
     ]
 });

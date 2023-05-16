@@ -32,12 +32,14 @@
 <template>
     <div class="flex-column">
         <div class="flex-row">
-            <span class="title">Les projets</span>
+            <span class="head-title d-flex justify-content-center">Les projets</span>
         </div>
         <div class="all-subjects d-flex flex-row flex-wrap justify-content-center">
             <div class="subject flex-column" v-for="subject in this.subjects">
-                <img class="img" :src="getImgPath(subject.id % 3)">
-                <span class="subject-title">{{ subject.name }}</span>
+                <router-link :to="{ path: '/vote/' + subject.id }">
+                    <img class="img" :src="getImgPath(subject.id % 3)">
+                    <span class="subject-title">{{ subject.name }}</span>
+                </router-link>
             </div>
         </div>
     </div>

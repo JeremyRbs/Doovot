@@ -1,5 +1,5 @@
 <template>
-    <Headermenu />
+    <HeadermenuConnect />
 </template>
 
 <style>
@@ -14,6 +14,7 @@
         name: 'App',
         components: {
             Headermenu,
+            HeadermenuConnect
         }
     }
 </script>

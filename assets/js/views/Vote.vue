@@ -35,7 +35,7 @@
             this.loaded = false;
 
             try {
-                await fetch("/graph/" + 1, {"method": "GET"})
+                await fetch("/graph/" + this.$route.params.id, {"method": "GET"})
                     .then(response => response.json())
                     .then(result => {
                         this.graphData = result;
@@ -126,7 +126,7 @@
             </div>
             <div v-if="(!showResult && !showVote) || (showResult && showVote)" class="box-vote flex-column">
                 <img class="img-vote" :src="getImgPath(this.subject.id % 3)">
-                <span class="subject-title-vote">{{ this.subject.name }}</span>
+                <span class="subject-title-vote d-flex justify-content-center">{{ this.subject.name }}</span>
             </div>
             <div class="rigth-side d-flex flex-column">
                 <div class="description d-flex flex-row">
