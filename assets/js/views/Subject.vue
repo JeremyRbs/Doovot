@@ -34,7 +34,7 @@
         <div class="flex-row">
             <span class="title">Les projets</span>
         </div>
-        <div class="all-subjects d-flex flex-row flex-wrap">
+        <div class="all-subjects d-flex flex-row flex-wrap justify-content-center">
             <div class="subject flex-column" v-for="subject in this.subjects">
                 <img class="img" :src="getImgPath(subject.id % 3)">
                 <span class="subject-title">{{ subject.name }}</span>

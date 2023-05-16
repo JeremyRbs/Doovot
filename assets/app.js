@@ -20,6 +20,7 @@ import Services from '../assets/js/views/Services.vue';
 import Contact from '../assets/js/views/Contact.vue';
 import Vote from '../assets/js/views/Vote.vue';
 import Dashboard from '../assets/js/views/Dashboard.vue';
+import Subject from '../assets/js/views/Subject.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -57,6 +58,16 @@ const router = createRouter({
             path: '/home',
             name: 'Home',
             component: Home
+        },
+        {
+            path: '/dashboard',
+            name: 'Dashboard',
+            component: Dashboard
+        },
+        {
+            path: '/subject',
+            name: 'Subject',
+            component: Subject
         }
     ]
 });

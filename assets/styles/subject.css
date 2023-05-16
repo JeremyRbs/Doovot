@@ -1,5 +1,5 @@
 .title {
-    margin-left: 24px;
+    margin-left: 50px;
     width: 563px;
     height: 63px;
 
@@ -12,10 +12,11 @@
 }
 
 .all-subjects {
+    margin: 50px;
     overflow: auto;
 
-    height: 80%;
-    width: 75%;
+    height: 50%;
+    width: 90%;
 }
 
 ::-webkit-scrollbar {

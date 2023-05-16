@@ -12,10 +12,10 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul class="navbar-nav ms-auto align-items-center">
                         <li class="nav-item">
-                            <a class="nav-link fs-4 me-5 fw-bolder" href="#">Tableau de bord</a>
+                            <router-link class="nav-link fs-4 me-5 fw-bolder" to="/dashboard">Tableau de bord</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-nowrap fs-4 me-5 fw-bolder" href="#">Projets</a>
+                            <router-link class="nav-link text-nowrap fs-4 me-5 fw-bolder" to="/subject">Projets</router-link>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-nowrap mb-4 me-4" href="#">
@@ -27,6 +27,7 @@
             </div>
         </nav>
     </div>
+    <router-view />
 </template>
 
 <script>

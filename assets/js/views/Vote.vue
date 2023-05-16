@@ -126,12 +126,12 @@
             </div>
             <div v-if="(!showResult && !showVote) || (showResult && showVote)" class="box-vote flex-column">
                 <img class="img-vote" :src="getImgPath(this.subject.id % 3)">
-                <span class="subject-title">{{ this.subject.name }}</span>
+                <span class="subject-title-vote">{{ this.subject.name }}</span>
             </div>
             <div class="rigth-side d-flex flex-column">
                 <div class="description d-flex flex-row">
                     <div class="w-100 d-flex flex-column">
-                        <span class="subject-title d-flex flex-row">{{ this.subject.name }}</span>
+                        <span class="subject-title-vote d-flex flex-row">{{ this.subject.name }}</span>
                         <span class="subject-description d-flex flex-row">Ajouter une description dans la bdd au subject ?</span>
                     </div>
                 </div>
