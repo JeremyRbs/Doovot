@@ -1,6 +1,5 @@
 <template>
-    <HeadermenuConnect />
-    <Contact />
+    <Headermenu />
 </template>
 
 <style>
@@ -10,21 +9,11 @@
 <script>
     import Headermenu from './components/Headermenu.vue';
     import HeadermenuConnect from './components/HeadermenuConnect.vue';
-    import A_Propos from './views/A_Propos.vue';
-    import Contact from './views/Contact.vue';
-    import Connexion from './views/Connexion.vue';
-    import Inscription from './views/Inscription.vue';
-    import Subject from './views/Subject.vue';
-    import Dashboard from './views/Dashboard.vue';
-    import Vote from './views/Vote.vue';
-    import Services from './views/Services.vue';
-
 
     export default {
         name: 'App',
         components: {
-            HelloName, Connexion, Inscription,
-            Subject, Dashboard, Vote, Services, Headermenu, HeadermenuConnect, A_Propos, Contact
+            Headermenu,
         }
     }
 </script>
