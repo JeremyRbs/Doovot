@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js'
 
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../assets/js/views/Home.vue';
+import Home from '../assets/js/views/Home';
 import Connexion from '../assets/js/views/Connexion.vue';
 import Inscription from '../assets/js/views/Inscription.vue';
 import Services from '../assets/js/views/Services.vue';
@@ -24,6 +24,10 @@ const router = createRouter({
     routes: [
         {
             path: '/',
+            component: Home
+        },
+        {
+            path: '/app',
             component: Home
         },
         {
@@ -43,21 +47,23 @@ const router = createRouter({
         },
         {
             path: '/a-propos',
-            name: '',
+            name: 'APropos',
             component: Home
         },
         {
             path: '/contact',
             name: 'Contact',
             component: Contact
+        },
+        {
+            path: '/home',
+            name: 'Home',
+            component: Home
         }
     ]
 });
 
-const app = createApp(App);
-app.use(router);
-app.use(bootstrap);
-app.mount('#vue-app');
+createApp(App).use(router).use(bootstrap).mount('#vue-app');
 
 VueElement.prototype.$userId = ''
 VueElement.prototype.$userName = ''
