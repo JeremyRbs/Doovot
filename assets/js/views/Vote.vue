@@ -29,6 +29,7 @@
                 voteForm: '',
                 alertMsg: '',
                 showDismissibleAlert: false,
+                option: '',
             }
         },
         async mounted () {
@@ -80,7 +81,6 @@
             submitForm() {
                 let userId = VueElement.prototype.userId;
                 userId = 1;
-                console.log("submitForm");
                 fetch("/new-vote/" + this.idSelectedProject + "&"+ userId, {"method": "GET"})
                     .then(response => response.json())
                     .then(result => {
@@ -98,6 +98,43 @@
                 setTimeout(() => {
                     this.showDismissibleAlert = false;
                 }, 2000);
+            },
+            addOption() {
+                let userId = VueElement.prototype.userId;
+                userId = 1;
+                if (this.option != '') {
+                    fetch("/add-project/" + this.$route.params.id + "&"+ userId + "&" + this.option, {"method": "GET"})
+                    .then(response => response.json())
+                    .then(result => {
+                        this.alertMsg = result;
+                        this.delayedAlert();
+                        this.getGraph();
+                        this.option = '';
+                    });
+                }
+            },
+            getGraph() {
+                fetch("/graph/" + this.$route.params.id, {"method": "GET"})
+                    .then(response => response.json())
+                    .then(result => {
+                        this.graphData = result;
+                        this.subject = result.subject;
+                        this.projects = result.projects;
+                    });
+
+                this.chartData = {
+                    labels: this.graphData.labels,
+                    datasets: [{
+                        label: 'Résultat des votes',
+                        data: this.graphData.data,
+                        backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 205, 86)'
+                        ],
+                        hoverOffset: 4
+                    }]
+                };
             }
         }
     }
@@ -116,8 +153,14 @@
                     <input class="circle" type="radio" v-model="voteForm" :id="project.id" :value="project.id" @change="this.changeSelectedProject($event.target.value)">
                     <span class="option">{{ project.description }} </span>
                 </div>
-                <button class="btn align-self-center" v-on:click="this.submitForm()">VOTER</button>
-                <button class="btn align-self-center" v-on:click="this.goBack()">RETOUR</button>
+                <div class="d-flex flex-row">
+                    <button class="btn align-self-center" v-on:click="this.submitForm()">VOTER</button>
+                    <button class="btn align-self-center" v-on:click="this.goBack()">RETOUR</button>
+                </div>
+                <div class="d-flex flex-row">
+                    <input class="inputOption" v-model="option" type="text">
+                    <button class="btn-option align-self-center m-8" v-on:click="this.addOption()">Ajouter une option</button>
+                </div>
             </div>
             <!-- show result -->
             <div v-if="showResult && !showVote" class="box-vote flex-column">

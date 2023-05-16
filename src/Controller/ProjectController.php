@@ -13,29 +13,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProjectController extends AbstractController
-{
-    #[Route('/project', name: 'create_project')]
-    public function createProject(EntityManagerInterface $entityManager): JsonResponse
-    {
-        $uRepo = $entityManager->getRepository(User::class);
-        $user = $uRepo->findOneBy(['id' => 1]);
-
-        $subjectRepo = $entityManager->getRepository(Subject::class);
-        $subject = $subjectRepo->findOneBy(['id' => 1]);
-
-        $project = new Project();
-        $project->setName("Distanciel");
-        $project->setDescription("Pouvoir passer l'ensemble des cours en distanciel.");
-        $project->setCreatedOn(new DateTime());
-        $project->setSubject($subject);
-        $project->setProjectCreatedByUser($user);
-
-        $entityManager->persist($project);
-        $entityManager->flush();
-
-        return new JsonResponse('Saved new project with id '.$project->getId());
-    }
-    
+{    
     #[Route('/new-vote/{projectId}&{userId}', name: 'new_vote')]
     public function newVote(EntityManagerInterface $entityManager, int $projectId, int $userId): JsonResponse
     {
@@ -59,5 +37,27 @@ class ProjectController extends AbstractController
         }
 
         return new JsonResponse("Vous avez déjà voté pour ce sujet.");
+    }
+
+    #[Route('/add-project/{subjectId}&{userId}&{description}', name: 'add_project')]
+    public function addProject(EntityManagerInterface $entityManager, int $subjectId, int $userId, string $description): JsonResponse
+    {
+        $uRepo = $entityManager->getRepository(User::class);
+        $user = $uRepo->findOneBy(['id' => $userId]);
+
+        $subjectRepo = $entityManager->getRepository(Subject::class);
+        $subject = $subjectRepo->findOneBy(['id' => $subjectId]);
+
+        $project = new Project();
+        $project->setName($subject->getName());
+        $project->setDescription($description);
+        $project->setCreatedOn(new DateTime());
+        $project->setSubject($subject);
+        $project->setProjectCreatedByUser($user);
+
+        $entityManager->persist($project);
+        $entityManager->flush();
+
+        return new JsonResponse('Option ajoutée !');
     }
 }
