@@ -2,7 +2,7 @@
     <h1 class="title">Qui sommes nous ?</h1>
     <div class="picture-container">
         <div class="picture-box">
-            <img src="../../images/louis.png" alt="Image 1">
+            <img src="../../images/louis.jpeg" alt="Image 1">
             <h2>Louis Giraudel</h2>
             <p>Développeur Front-End</p>
         </div>
@@ -12,22 +12,22 @@
             <p>Développeur Front-End</p>
         </div>
         <div class="picture-box">
-            <img src="../../images/marie.png" alt="Image 3">
+            <img src="../../images/marie.jpeg" alt="Image 3">
             <h2>Marie Vouriot</h2>
             <p>Développeuse Back-End</p>
         </div>
         <div class="picture-box">
-            <img src="../../images/bastien.png" alt="Image 4">
+            <img src="../../images/bastien.jpeg" alt="Image 4">
             <h2>Bastien Lacour</h2>
             <p>Développeur Back-End</p>
         </div>
         <div class="picture-box">
-            <img src="../../images/tom.png" alt="Image 5">
+            <img src="../../images/tom.jpeg" alt="Image 5">
             <h2>Tom Chabas</h2>
             <p>Développeur Front-End</p>
         </div>
         <div class="picture-box">
-            <img src="../../images/jeremy.png" alt="Image 6">
+            <img src="../../images/jeremy.jpeg" alt="Image 6">
             <h2>Jeremy Ribes</h2>
             <p>Développeur Full-Stack</p>
         </div>

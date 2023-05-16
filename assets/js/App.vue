@@ -1,7 +1,5 @@
 <template>
-    <h1>Hey</h1>
-    <HelloName />
-    <HelloName />
+    <A_Propos />
 </template>
 
 <style>
@@ -10,11 +8,12 @@
 
 <script>
     import HelloName from './components/HelloName.vue';
+    import A_Propos from './views/A_Propos.vue';
 
     export default {
         name: 'App',
         components: {
-            HelloName
+            HelloName, A_Propos
         }
     }
 </script>
