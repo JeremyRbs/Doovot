@@ -12,6 +12,8 @@ import './styles/app.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js'
 
+Vue.use(VueRouter);
+
 createApp(App).use(bootstrap).mount('#vue-app');
 VueElement.prototype.$userId = ''
 VueElement.prototype.$userName = ''

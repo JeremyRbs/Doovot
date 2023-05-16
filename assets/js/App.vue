@@ -1,8 +1,21 @@
 <template>
-    <HeadermenuConnect />
+    <h1>Bonjour l'application !</h1>
+    <p>
+        <!-- utilisez le composant router-link pour la navigation. -->
+        <!-- spécifiez le lien en le passant à la prop `to` -->
+        <!-- `<router-link>` sera rendu en tag `<a>` par défaut -->
+        <router-link to="/foo">Aller à Foo</router-link>
+        <router-link to="/bar">Aller à Bar</router-link>
+    </p>
+
+    <router-view></router-view>
 </template>
 
 <style>
+router-link{
+    display: flex;
+    flex-direction: column;
+}
 @import '../styles/app.css'; 
 </style>
 
