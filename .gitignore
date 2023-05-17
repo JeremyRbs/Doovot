@@ -28,7 +28,6 @@ yarn-error.log
 #
 ### ignore files
 package-lock.json
-package.json
-composer.json
 composer.lock
 yarn.lock
+symfony.lock
