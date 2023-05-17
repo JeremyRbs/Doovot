@@ -3,6 +3,8 @@
 @import '../../styles/connexion.css'; 
 </style>
 <script>
+    import Headermenu from '../components/Headermenu.vue';
+
     export default{
         name: 'Connexion',
         el:'#btnConnect',
@@ -27,11 +29,15 @@
                         });
                 }
             } 
+        },
+        components: {
+            Headermenu
         }
     }
 </script>
 
 <template>
+    <Headermenu/>
     <div style="flex">
       <img id="imageConnexion" src="../../images/bonhommeInscription.svg"/>  
     </div>

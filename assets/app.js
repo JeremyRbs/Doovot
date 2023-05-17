@@ -22,6 +22,7 @@ import Vote from '../assets/js/views/Vote.vue';
 import Dashboard from '../assets/js/views/Dashboard.vue';
 import Subject from '../assets/js/views/Subject.vue';
 import A_Propos from '../assets/js/views/A_Propos.vue';
+import Compte from '../assets/js/views/Compte.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -39,6 +40,11 @@ const router = createRouter({
             path: '/inscription',
             name: 'Inscription',
             component: Inscription
+        },
+        {
+            path: '/compte',
+            name: 'Compte',
+            component: Compte
         },
         {
             path: '/services',
@@ -69,11 +75,6 @@ const router = createRouter({
             path: '/subject',
             name: 'Subject',
             component: Subject
-        },
-        {
-            path: '/vote/:id',
-            name: 'Vote',
-            component: Vote
         }
     ]
 });

@@ -3,6 +3,8 @@
 @import '../../styles/services.css';
 </style>
 <script>
+    import Headermenu from '../components/Headermenu.vue';
+
     export default{
         name: 'Services',
         el:'',
@@ -12,10 +14,14 @@
             }
         },
         methods: {
+        },
+        components: {
+            Headermenu
         }
     }
 </script>
 <template>
+    <Headermenu/>
     <img id="imageServices" src="../../images/logoServices.svg"/>
     <p class="textServices" style="font-size: 34px; margin-top: 2%; margin-left: 18%; position: absolute;">La plateforme de <br/> proposition de projet <br/> et de vote en ligne</p>
     <div class="boxServices" style="margin-top: 3%; margin-left: 55%;">

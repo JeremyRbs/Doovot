@@ -1,4 +1,5 @@
 <template>
+    <Headermenu/>
     <div class="containermain">
         <div class="textleft">
             <h1>La plateforme de vote la plus en vogue de l'EFREI</h1>
@@ -10,9 +11,13 @@
 </template>
 
 <script>
+    import Headermenu from '../components/Headermenu.vue';
 
     export default {
-        name: 'Home'
+        name: 'Home',
+        components: {
+            Headermenu
+        }
     }
 </script>
     

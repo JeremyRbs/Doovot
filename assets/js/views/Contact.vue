@@ -1,5 +1,5 @@
 <template>
-
+    <Headermenu/>
     <div class="logo-container">
         <h2 class="title">Contact</h2>
         <img src="../../images/vote_contact.png" alt="Contacter Doovot">
@@ -46,6 +46,8 @@
 </template>
 
 <script>
+    import Headermenu from '../components/Headermenu.vue';
+
     export default {
         name: 'Contact',
         data() {
@@ -57,6 +59,9 @@
             _confirm(){
                 alert('Votre commentaire a bien été pris en compte. Nos équipes reviendront vers vous au plus vite.');
             } 
+        },
+        components: {
+            Headermenu
         }
     }
 </script>

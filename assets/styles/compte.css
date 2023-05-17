@@ -11,12 +11,10 @@
     box-shadow:  10px 5px 5px #498CB3;
 }
 .textCompte{
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 200%;
     text-align: center;
-
     color: #498CB3;
 }
 .buttonCompte{
@@ -31,5 +29,4 @@
     height: 40%;
     margin-top: 5%;
     color: #FFFFFF;
-   
 }

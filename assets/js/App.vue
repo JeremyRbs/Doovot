@@ -1,5 +1,5 @@
 <template>
-    <Headermenu />
+    <router-view></router-view>
 </template>
 
 <style>

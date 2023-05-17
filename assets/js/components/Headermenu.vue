@@ -24,7 +24,7 @@
                             <router-link class="nav-link text-nowrap fs-3 me-5 fw-bolder" to="/contact">Contact</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link text-nowrap mb-4 me-4" to="/connexion">
+                            <router-link class="nav-link text-nowrap mb-4 me-4" to="/compte">
                                 <img src="../../images/logopersonneblanc.png" alt="Logoperson" height="80" width="80">
                             </router-link>
                         </li>
@@ -33,7 +33,6 @@
             </div>
         </nav>
     </div>
-    <router-view :key="$route.fullPath"></router-view>
 </template>
 
 <script>

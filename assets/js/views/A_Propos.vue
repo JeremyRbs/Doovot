@@ -1,4 +1,5 @@
 <template>
+    <Headermenu/>
     <h1 class="title">Qui sommes nous ?</h1>
     <div class="picture-container">
         <div class="picture-box">
@@ -46,6 +47,8 @@
 </template>
 
 <script>
+    import Headermenu from '../components/Headermenu.vue';
+
     export default {
         name: 'A_Propos',
         data() {
@@ -55,6 +58,9 @@
         },
         methods: {
             
+        },
+        components: {
+            Headermenu
         }
     }
 </script>
