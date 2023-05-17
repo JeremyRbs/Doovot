@@ -35,11 +35,11 @@
     }
     .textleft h1{
         display: flex;
-        width: 60%;
+        width: 80%;
         justify-content: center;
         font-style: normal;
         font-weight: 600;
-        font-size: 48px;
+        font-size: 44px;
         line-height: 59px;
         text-align: center;
     }

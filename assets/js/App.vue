@@ -1,5 +1,5 @@
 <template>
-    <HeadermenuConnect />
+    <Headermenu />
 </template>
 
 <style>
