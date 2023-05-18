@@ -22,13 +22,16 @@
 </script>
 
 <template>
-    <Headermenu/>
-    <div class="boxCompte" style="margin-top: 14%; margin-left: 40%;">
+    <div class="boxCompte" style="margin-top: 7%; margin-left: 40%;">
         <p class="textCompte">Un compte ?</p>
-        <router-link id="btnCompte" class="buttonCompte textCompte" style="font-size: 100%;" to="/connexion">CONNEXION</router-link>
+        <RouterLink to="/connexion">
+            <button id="btnCompte" v-on:click="" class="buttonCompte textCompte" style="font-size: 100%;">CONNEXION</button>
+        </RouterLink>
     </div>
-    <div class="boxCompte" style="margin-top: 27%; margin-left: 40%;">
+    <div class="boxCompte" style="margin-top: 22%; margin-left: 40%;">
         <p class="textCompte">Pas de compte ?</p>
-        <router-link id="btnCompte" class="buttonCompte textCompte" style="font-size: 100%;" to="/inscription">INSCRIPTION</router-link>
+        <RouterLink to="/inscription">
+            <button id="btnCompte" v-on:click="" class="buttonCompte textCompte" style="font-size: 100%;">INSCRIPTION</button>
+        </RouterLink>
     </div>
 </template>
