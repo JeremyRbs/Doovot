@@ -80,12 +80,6 @@ const router = createRouter({
             path: '/vote/:id',
             name: 'Vote',
             component: Vote
-        },
-        {
-
-            path: '/compte',
-            name: 'Compte',
-            component: Compte
         }
     ]
 });
