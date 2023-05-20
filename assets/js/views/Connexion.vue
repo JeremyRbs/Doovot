@@ -33,6 +33,7 @@
                                 VueElement.prototype.$userName = this.message.name;
                                 VueElement.prototype.$userIsAdmin = this.message.isAdmin;
                                 // a finir avec les routes
+                                this.$router.push('Dashboard');
                             }
                         });
                 }

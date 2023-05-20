@@ -19,8 +19,7 @@
         },
         methods: {
             getHistory() {
-                let userId = VueElement.prototype.userId;
-                userId = 1;
+                let userId = VueElement.prototype.$userId;
 
                 fetch("/history/" + userId, {"method": "GET"})
                     .then(response => response.json())
