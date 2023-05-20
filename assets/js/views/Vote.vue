@@ -149,7 +149,7 @@
             <div v-if="showVote && !showResult" class="box-vote flex-column">
                 <div v-for="project in this.projects" class="d-flex flex-row">
                     <input class="circle" type="radio" v-model="voteForm" :id="project.id" :value="project.id" @change="this.changeSelectedProject($event.target.value)">
-                    <span class="option">{{ project.description }} </span>
+                    <span class="option">{{ project.name }} </span>
                 </div>
                 <div class="d-flex flex-row">
                     <button class="btn align-self-center" v-on:click="this.submitForm()">VOTER</button>
@@ -173,7 +173,7 @@
                 <div class="description d-flex flex-row">
                     <div class="w-100 d-flex flex-column">
                         <span class="subject-title-vote d-flex flex-row">{{ this.subject.name }}</span>
-                        <span class="subject-description d-flex flex-row">Ajouter une description dans la bdd au subject ?</span>
+                        <span class="subject-description d-flex flex-row"></span>
                     </div>
                 </div>
                 <div class="graph d-flex flex-row">

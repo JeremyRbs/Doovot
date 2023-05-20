@@ -45,7 +45,9 @@
                     <span class="box-title">Historique de mes projets</span>
                     <div class="d-flex flex-row flex-wrap justify-content-center">
                         <div v-for="subject in this.subjects">
-                            <div class="box-dashboard flex-column">{{ subject.name }}</div>
+                            <router-link :to="{ path: '/vote/' + subject.id }">
+                                <div class="box-dashboard flex-column">{{ subject.name }}</div>
+                            </router-link>
                         </div>
                     </div>
                 </div>

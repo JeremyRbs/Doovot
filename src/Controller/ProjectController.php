@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProjectController extends AbstractController
-{    
+{
     #[Route('/new-vote/{projectId}&{userId}', name: 'new_vote')]
     public function newVote(EntityManagerInterface $entityManager, int $projectId, int $userId): JsonResponse
     {
@@ -49,8 +49,8 @@ class ProjectController extends AbstractController
         $subject = $subjectRepo->findOneBy(['id' => $subjectId]);
 
         $project = new Project();
-        $project->setName($subject->getName());
-        $project->setDescription($description);
+        $project->setName($description);
+        $project->setDescription(null);
         $project->setCreatedOn(new DateTime());
         $project->setSubject($subject);
         $project->setProjectCreatedByUser($user);

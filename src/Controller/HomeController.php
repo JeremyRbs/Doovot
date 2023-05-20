@@ -21,8 +21,8 @@ class HomeController extends AbstractController
 	 * @Route("/{vueRouting}", name="index")
 	 * @return Response
 	 */
-	public function appAction(): Response
-	{
-		return $this->render('base.html.twig', []);
-	}
+	// public function appAction(): Response
+	// {
+	// 	return $this->render('base.html.twig', []);
+	// }
 }
