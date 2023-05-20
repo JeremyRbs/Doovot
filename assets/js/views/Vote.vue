@@ -81,8 +81,8 @@
                 this.idSelectedProject = id;
             },
             submitForm() {
-                let userId = VueElement.prototype.userId;
-                userId = 1;
+                let userId = VueElement.prototype.$userId;
+
                 fetch("/new-vote/" + this.idSelectedProject + "&"+ userId, {"method": "GET"})
                     .then(response => response.json())
                     .then(result => {
@@ -102,8 +102,7 @@
                 }, 2000);
             },
             addOption() {
-                let userId = VueElement.prototype.userId;
-                userId = 1;
+                let userId = VueElement.prototype.$userId;
                 if (this.option != '') {
                     fetch("/add-project/" + this.$route.params.id + "&"+ userId + "&" + this.option, {"method": "GET"})
                     .then(response => response.json())

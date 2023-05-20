@@ -87,4 +87,24 @@ class SubjectController extends AbstractController
             ...["projects" =>  $allProjects],
         ]);
     }
+
+    #[Route('/add-subject/{userId}&{name}', name: 'add_subject')]
+    public function addSubject(EntityManagerInterface $entityManager, int $userId, string $name): JsonResponse
+    {
+        $uRepo = $entityManager->getRepository(User::class);
+        $user = $uRepo->findOneBy(['id' => $userId]);
+
+        $categRepo = $entityManager->getRepository(Category::class);
+        $categ = $categRepo->findOneBy(['id' => 1]);
+
+        $subject = new Subject();
+        $subject->setName($name);
+        $subject->setCategory($categ);
+        $subject->setUser($user);
+
+        $entityManager->persist($subject);
+        $entityManager->flush();
+
+        return new JsonResponse('Projet ajouté !');
+    }
 }
