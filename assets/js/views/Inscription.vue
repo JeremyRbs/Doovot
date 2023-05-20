@@ -26,6 +26,7 @@
                         .then(result => {
                             this.message = result;
                             alert(this.message);
+                            this.$router.push('Connexion');
                         });
                 }
             } 

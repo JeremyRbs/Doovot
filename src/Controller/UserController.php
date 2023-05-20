@@ -22,7 +22,7 @@ class UserController extends AbstractController
         $entityManager->persist($user);
         $entityManager->flush();
 
-        return new JsonResponse('Votre inscription a bien été prise en compte');
+        return new JsonResponse("Votre inscription a bien été prise en compte \nVous allez être rediriger vers la page pour vous connecter");
     }
 
     #[Route('/connexionUser/{username}&{password}', name: 'connexion_user')]
