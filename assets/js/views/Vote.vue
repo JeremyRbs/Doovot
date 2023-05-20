@@ -5,21 +5,28 @@
 
 <script>
     import { Pie } from 'vue-chartjs';
-    import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
-    ChartJS.register(ArcElement, Tooltip, Legend);
+    import { Chart as ChartJS, ArcElement, Tooltip, Legend, Colors } from 'chart.js';
+    ChartJS.register(ArcElement, Tooltip, Legend, Colors);
+    
+    import HeadermenuConnect from '../components/HeadermenuConnect.vue';
 
     import { VueElement } from 'vue';
 
     export default{
         name: 'Vote',
-        components: { Pie },
+        components: { Pie, HeadermenuConnect },  
         data () {
             return {
                 loaded: false,
                 chartData: null,
                 graphData: null,
                 chartOptions: {
-                    responsive: true
+                    responsive: true,
+                    plugins: {
+                        colors: {
+                            forceOverride: true
+                        }
+                    }
                 },
                 subject: '',
                 projects: '',
@@ -49,11 +56,6 @@
                     datasets: [{
                         label: 'Résultat des votes',
                         data: this.graphData.data,
-                        backgroundColor: [
-                            'rgb(255, 99, 132)',
-                            'rgb(54, 162, 235)',
-                            'rgb(255, 205, 86)'
-                        ],
                         hoverOffset: 4
                     }]
                 };
@@ -127,11 +129,6 @@
                     datasets: [{
                         label: 'Résultat des votes',
                         data: this.graphData.data,
-                        backgroundColor: [
-                            'rgb(255, 99, 132)',
-                            'rgb(54, 162, 235)',
-                            'rgb(255, 205, 86)'
-                        ],
                         hoverOffset: 4
                     }]
                 };
@@ -141,6 +138,7 @@
 </script>
 
 <template>
+    <HeadermenuConnect />
     <div class="flex-column content">
         <div v-if="showDismissibleAlert" class="alert alert-success" id="success-alert">{{ this.alertMsg }}</div>
         <div class="d-flex flex-row">

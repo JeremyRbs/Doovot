@@ -4,8 +4,13 @@
 </style>
 
 <script>
+    import HeadermenuConnect from '../components/HeadermenuConnect.vue';
+
     export default{
         name: 'Subject',
+        components: {
+            HeadermenuConnect
+        },
         data() {
             return {
                 subjects: '',
@@ -30,6 +35,7 @@
 </script>
 
 <template>
+    <HeadermenuConnect />
     <div class="flex-column">
         <div class="flex-row">
             <span class="head-title d-flex justify-content-center">Les projets</span>

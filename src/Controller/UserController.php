@@ -33,11 +33,4 @@ class UserController extends AbstractController
         $response = $user == null ? "Identifiants incorrects" : ['id' => $user->getId(), 'name' => $user->getUserName(), 'isAdmin' => $user->isIsAdmin()];
         return new JsonResponse($response);
     }
-
-    // #[Route('/connexion', name: 'connexion')]
-    // public function connexion(EntityManagerInterface $entityManager): JsonResponse
-    // {
-
-    //     return new JsonResponse('connexion');
-    // }
 }

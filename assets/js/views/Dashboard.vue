@@ -5,9 +5,13 @@
 
 <script>
     import { VueElement } from 'vue';
+    import HeadermenuConnect from '../components/HeadermenuConnect.vue';
 
     export default{
         name: 'Dashboard',
+        components: {
+            HeadermenuConnect
+        },
         data() {
             return {
                 subjects: '',
@@ -33,6 +37,7 @@
 </script>
 
 <template>
+    <HeadermenuConnect />
     <div class="flex-column">
         <div class="d-flex flex-row flex-wrap justify-content-center">
             <div class="flex-column flex-wrap">

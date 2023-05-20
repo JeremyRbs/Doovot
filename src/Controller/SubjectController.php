@@ -14,26 +14,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class SubjectController extends AbstractController
 {
-    #[Route('/subject', name: 'create_subject')]
-    public function createSubject(EntityManagerInterface $entityManager): JsonResponse
-    {
-        $uRepo = $entityManager->getRepository(User::class);
-        $user = $uRepo->findOneBy(['id' => 1]);
-
-        $categRepo = $entityManager->getRepository(Category::class);
-        $categ = $categRepo->findOneBy(['id' => 1]);
-
-        $subject = new Subject();
-        $subject->setName("Crous");
-        $subject->setCategory($categ);
-        $subject->setUser($user);
-
-        $entityManager->persist($subject);
-        $entityManager->flush();
-
-        return new JsonResponse('Saved new subject with id '.$subject->getId());
-    }
-
     #[Route('/all-subjects', name: 'all_subjects')]
     public function getAllSubjects(EntityManagerInterface $entityManager): JsonResponse
     {

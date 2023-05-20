@@ -16,6 +16,7 @@ class HomeController extends AbstractController
     {
 		return $this->render('base.html.twig', []);
     }
+
 	/**
 	 * @Route("/{vueRouting}", name="index")
 	 * @return Response
@@ -23,11 +24,5 @@ class HomeController extends AbstractController
 	public function appAction(): Response
 	{
 		return $this->render('base.html.twig', []);
-	}
-
-	#[Route('/api/{name}', name: 'api_')]
-	public function api(string $name): Response
-	{
-	  return new JsonResponse('hello ' . $name);
 	}
 }
