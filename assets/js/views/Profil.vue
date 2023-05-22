@@ -28,10 +28,6 @@
 <template>   
     <HeadermenuConnect />
     <div class="box_principal">
-        
-        <div class ="box_profil">
-            <p class="textProfilTitre">Profil</p>
-        </div>
 
         <div class ="box_contenu">
 
