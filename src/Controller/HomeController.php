@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
 	/**
-	 * @Route("/app/{slug?}", name="app", requirements={"slug"=".+"})")
+	 * @Route("/", name="app", requirements={"slug"=".+"})")
 	 */
 	public function app(): Response
     {

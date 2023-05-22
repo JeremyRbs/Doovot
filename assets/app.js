@@ -28,7 +28,7 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: '/app',
+            path: '/',
             component: Home
         },
         {
