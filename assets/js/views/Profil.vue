@@ -5,15 +5,19 @@
 
 <script>
     import { VueElement } from 'vue';
+    import HeadermenuConnect from '../components/HeadermenuConnect.vue';
+
 
     export default{
-
         name: 'Profil',
-
+        components: {
+            HeadermenuConnect
+        },
         data () {
             return {
-        }
-    },
+                username: VueElement.prototype.$userName
+            }
+        },
 
         methods: {
             
@@ -22,7 +26,7 @@
 </script>
 
 <template>   
-
+    <HeadermenuConnect />
     <div class="box_principal">
         
         <div class ="box_profil">
@@ -40,7 +44,7 @@
                     </div>
                     
                     <div class="box_texte">
-                        <p class="textProfil">Nom : <br/> Telephone :</p>
+                        <p class="textProfil">Nom : {{ this.username }}</p>
                     </div>
                    
                 </div>
@@ -60,7 +64,7 @@
                     </div>
 
                     <div class="box_texte">
-                        <p class="textProfil">Mot de passe : </p>
+                        <p class="textProfil">Mot de passe : ************</p>
                     </div>
      
                 </div>
@@ -72,10 +76,10 @@
             </div>
 
         </div>
-        <div class="bouton">
+        <!-- <div class="bouton">
             <button id="btnConnect" v-on:click="modifierUser()" class="btnConnexion textConnexion" style="width: 15%; height: 5%;">MODIFIER</button>
             <button id="btnConnect" v-on:click="retour()" class="btnConnexion textConnexion" style="width: 15%; height: 5%;">RETOUR</button>
-        </div>
+        </div> -->
 
     </div> 
 

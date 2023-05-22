@@ -88,6 +88,7 @@
                     .then(result => {
                         this.alertMsg = result;
                         this.delayedAlert();
+                        this.getGraph();
                     });
                 this.goBack();
             },
