@@ -23,6 +23,7 @@ import Dashboard from '../assets/js/views/Dashboard.vue';
 import Subject from '../assets/js/views/Subject.vue';
 import A_Propos from '../assets/js/views/A_Propos.vue';
 import Compte from '../assets/js/views/Compte.vue';
+import Profil from '../assets/js/views/Profil.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -80,6 +81,11 @@ const router = createRouter({
             path: '/vote/:id',
             name: 'Vote',
             component: Vote
+        },
+        {
+            path: '/profil',
+            name: 'Profil',
+            component: Profil
         }
     ]
 });

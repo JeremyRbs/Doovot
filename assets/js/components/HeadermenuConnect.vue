@@ -18,9 +18,9 @@
                             <router-link class="nav-link text-nowrap fs-4 me-5 fw-bolder" to="/subject">Projets</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-nowrap mb-4 me-4" href="#">
+                            <router-link class="nav-link text-nowrap mb-4 me-4" to="/profil">
                                 <img src="../../images/logopersonneblanc.png" alt="Logoperson" height="80" width="80">
-                            </a>
+                            </router-link>
                         </li>
                     </ul>
                 </div>
