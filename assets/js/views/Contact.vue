@@ -1,7 +1,6 @@
 <template>
     <Headermenu/>
     <div class="logo-container">
-        <h2 class="title">Contact</h2>
         <img src="../../images/vote_contact.png" alt="Contacter Doovot">
     </div>
 
@@ -72,6 +71,7 @@
 
 
 .container {
+    margin-top: 3%;
     background-color: #c3e5f3;
     border-radius: 10px;
     position: relative;
@@ -126,8 +126,9 @@
     }
 
     .logo-container img {
-        width: 40vw;
-        height: 40vw;
+        width: 25vw;
+        height: 25vw;
+        margin-left: 35%;
     }
 
     .social-icons-container {
@@ -157,6 +158,7 @@
         right: 0;
         transform: translateY(-50%);
         width: calc(50% - 5em);
+        height: auto;
     }
 }
 
