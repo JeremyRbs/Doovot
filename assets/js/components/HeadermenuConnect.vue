@@ -2,7 +2,7 @@
     <div>
         <nav class="navbar navbar-expand-xl">
             <div class="container-fluid mt-2 ms-4">
-                <router-link class="navbar-brand" to="./home">
+                <router-link class="navbar-brand" to="/app">
                     <img src="../../images/doovot.png" alt="Logo" width="353" height="81">
                 </router-link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
